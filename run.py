@@ -131,7 +131,7 @@ def main():
 
 
 print('Welcome to Love Sandwiches Data Automation')
-main()
+stock_data = main()
 
 
 def get_stock_values(data):

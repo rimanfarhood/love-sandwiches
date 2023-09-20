@@ -134,3 +134,21 @@ print('Welcome to Love Sandwiches Data Automation')
 main()
 
 
+def get_stock_values(data):
+    """
+    Returns a dictionary with the the recommended stock values
+    """
+    
+    headings = SHEET.worksheet("stock").row_values(1)
+    values = SHEET.worksheet("stock").get_all_values()[-1]
+    
+    print('Make the following numers of sandwiches for next market:\n')
+    
+    data = {headings[i]: values[i] for i in range(len(headings))}
+    
+    return data
+    
+
+
+stock_values = get_stock_values(stock_data)
+print(stock_values)
